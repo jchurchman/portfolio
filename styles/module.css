@@ -1,5 +1,5 @@
 
-header, nav {
+header, nav, footer {
     background-color: #89bdd3;
 }
 
@@ -10,4 +10,23 @@ article {
 
 aside {
     background-color: #9ad3de;
+}
+
+nav.show {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+nav div {
+    margin: auto;
+}
+
+nav.hide {
+    display: none;
+}
+
+@media (min-width: 600px) {
+
 }

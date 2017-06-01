@@ -1,0 +1,8 @@
+#siteHeading, footer {
+    margin: auto;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+
+}
