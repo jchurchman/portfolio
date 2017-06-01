@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./styles/base.css">
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="./styles/module.css">
+    <link rel="stylesheet" type="text/css" href="./styles/state.css">
+    <title>Joe Churchman</title>
+</head>
+<body>
+    <section id="siteHeading">
+        <header>
+            <h1>Joe Churchman</h1>
+            <h2>Ever evolving developer</h2>
+        </header>
+        <nav>
+            <div name="home"><a href="">Home</a></div> <!-- home tab will reset the menu -->
+            <div name="about"><a href="">About</a></div>
+            <div name="portfolio"><a href="">Portfolio</a></div>
+            <div name="contact"><a href="">Contact</a></div> <!-- might end up putting contact on every page -->
+        </nav>
+    </section>
+    <main>
+        <section id="portfolio">
+            <article class="template">
+                <header>
+                    <h3><a class="projectLink" href="">Project Title</a></h3>
+                </header>
+                <img class="thumbnail" src=""/>
+                <p class="date">Project completed around</p>
+                <p class="blurb">This project was an exercise in {{something}}, it utilized {{elements used in project}}</p>
+                <nav>Links to github & social media will go here</nav>
+            </article>
+        </section>
+        <section id="about">
+            <header>
+                <h3>About Joe</h3>
+            </header>
+            <article>
+                <h4>Bio</h4>
+                <p>Stuff about Joe goes here</p>
+            </article>
+            <article>
+                <h4>Work History</h4>
+                <p>Stuff about Joe's work history</p>
+            </article>
+            <article>
+                <h4>Education</h4>
+                <p>Stuff about Joe's education</p>
+            </article>
+            <aside>
+                <p>Interests</p>
+                <ul>
+                    <li>Interest1</li>
+                    <li>Interest2</li>
+                    <li>Interest3</li>
+                </ul>
+            </aside>
+        </section>
+        <section id="contact">
+            <header>
+                <h3>Contact Me</h3>
+            </header>
+            <form> <!-- Form will have inputs for contact info, etc. -->
+                <fieldset>
+                </fieldset>
+            </form>
+    </main>
+    <footer>
+    </footer>
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
