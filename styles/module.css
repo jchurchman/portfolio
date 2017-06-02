@@ -1,0 +1,36 @@
+
+header, nav, footer {
+    background-color: #89bdd3;
+}
+
+
+article {
+    background-color: #c9c9c9;
+}
+
+aside, form {
+    background-color: #9ad3de;
+}
+
+nav.show {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+nav a {
+    margin: auto;
+    padding: 0 .5em;
+}
+
+nav.hide {
+    display: none;
+}
+
+@media (min-width: 600px) {
+
+}

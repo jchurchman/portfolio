@@ -1,0 +1,13 @@
+#siteHeading, footer {
+    margin: auto;
+    width: 100%;
+}
+
+span {
+    position: absolute;
+    left: 92.5%;
+    top: 1.5%;
+}
+@media (min-width: 600px) {
+
+}

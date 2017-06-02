@@ -1,16 +1,125 @@
-body, form {
+body, form, html {
     margin: 0;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: #e3e3e3;
+    font-size: 1.125em;
+    color: white;
+    font-weight: 900;
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?9ocjsi');
+  src:  url('../fonts/icomoon.eot?9ocjsi#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?9ocjsi') format('truetype'),
+    url('../fonts/icomoon.woff?9ocjsi') format('woff'),
+    url('../fonts/icomoon.svg?9ocjsi#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+  content: "\e902";
+}
+.icon-newspaper:before {
+  content: "\e904";
+}
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-book:before {
+  content: "\e91f";
+}
+.icon-books:before {
+  content: "\e920";
+}
+.icon-profile:before {
+  content: "\e923";
+}
+.icon-address-book:before {
+  content: "\e944";
+}
+.icon-hammer:before {
+  content: "\e996";
+}
+.icon-briefcase:before {
+  content: "\e9ae";
+}
+.icon-menu:before {
+  content: "\e9bd";
+  font-size: 1.25em;
+
+}
+.icon-info:before {
+  content: "\ea0c";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 1% 0;
 }
 
 a {
     text-decoration: none;
-    color: #039;
+    color: #3f3f3f;
+    opacity: 0.65;
 }
 
 a:hover {
     text-decoration: none;
-    color: #03F;    
+    opacity: 1;
+}
+/*Settings below imported from type-scale.com for font scaling*/
+@media (min-width: 600px) {
+    html {
+        font-size: 1.125em;
+    }
+
+    body {
+    font-weight: 400;
+    line-height: 1.45;
+    }
+
+    p {
+        margin-bottom: 1.3em;
+    }
+
+    h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    font-weight: inherit;
+    line-height: 1.2;
+    }
+
+    h1 {
+    margin-top: 0;
+    font-size: 3.157em;
+    }
+
+    h2 {font-size: 2.369em;}
+
+    h3 {font-size: 1.777em;}
+
+    h4 {font-size: 1.333em;}
+
+    small, .font_small {font-size: 0.75em;}
+        
 }
