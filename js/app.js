@@ -2,7 +2,7 @@
 
 var projects = [];
 
-function Project(title, link, thumbnail, date, pitch, blurb){
+function Project(title, link, thumbnail, date, pitch, blurb) {
     this.title = title;
     this.link = link;
     this.thumbnail = thumbnail;
@@ -24,10 +24,10 @@ Project.prototype.toHTML = function () {
     return $newProject;
 };
 
-projectEntries.forEach(function(projectObject) {
-  projects.push(new Project(projectObject));
+projectEntries.forEach(function (projectObject) {
+    projects.push(new Project(projectObject));
 });
 
-projects.forEach(function(project){
-  $('#portfolio').append(project.toHtml());
+projects.forEach(function (project) {
+    $('#portfolio').append(project.toHtml());
 });
