@@ -13,14 +13,18 @@ aside {
 }
 
 nav.show {
+    width: 100%;
     display: flex;
     text-align: center;
     justify-content: space-around;
     align-items: baseline;
+    margin: 0 auto;
+    padding: 1%;
 }
 
-nav div {
+nav a {
     margin: auto;
+    padding: 0 .5em;
 }
 
 nav.hide {
