@@ -2,16 +2,25 @@
 
 var projectView = {};
 
-projectView.tabSelector = function () {
+projectView.pageLoader = function () {
     $('.template').hide();
-    $('main section').hide();
+    $('main>section').hide();
+
+};
+
+projectView.tabSelector = function () {
+
     $('.tab').on('click', function() {
         var $selected = $(this).attr('name');
+
+        $('main>section').hide();
+        console.log($('section').attr('id', $selected ));
         $('section').attr('id', $selected ).fadeIn(500);
     });
 
 };
 
 $(document).ready(function () {
-    projectView.tabSelector();
+    projectView.pageLoader();
+    // projectView.tabSelector();
 });

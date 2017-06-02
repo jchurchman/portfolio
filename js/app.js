@@ -2,18 +2,17 @@
 
 var projects = [];
 
-function Project(title, link, thumbnail, date, pitch, blurb) {
-    this.title = title;
-    this.link = link;
-    this.thumbnail = thumbnail;
-    this.date = date;
-    this.pitch = pitch;
-    this.blurb = blurb;
+function Project(projectObject) {
+    this.title = projectObject.title;
+    this.link = projectObject.link;
+    this.thumbnail = projectObject.thumbnail;
+    this.date = projectObject.date;
+    this.pitch = projectObject.pitch;
+    this.blurb = projectObject.blurb;
 }
 
 Project.prototype.toHTML = function () {
     var $newProject = $('article.template').clone().removeClass('template');
-
     $newProject.find('h3').text(this.title);
     $newProject.find('.projectLink').attr('href', this.link);
     $newProject.find('img').attr('src', this.thumbnail);
@@ -29,5 +28,5 @@ projectEntries.forEach(function (projectObject) {
 });
 
 projects.forEach(function (project) {
-    $('#portfolio').append(project.toHtml());
+    $('#portfolio').append(project.toHTML());
 });
