@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/state.css">
     <title>Joe Churchman</title>
 </head>
+
 <body>
     <section id="siteHeading">
         <header>
@@ -17,11 +19,13 @@
             <h2>Ever evolving developer</h2>
             <span data-icon="e9bd" class="icon-menu"></span>
         </header>
-        <nav class="show" id="main-nav">
-            <div class="tab" name="home">Home</div> <!-- home tab will reset the menu -->
+        <nav id="main-nav">
+            <div class="tab" name="home">Home</div>
+            <!-- home tab will reset the menu -->
             <div class="tab" name="about">About</div>
             <div class="tab" name="portfolio">Portfolio</div>
-            <div class="tab" name="contact">Contact</div> <!-- might end up putting contact on every page -->
+            <div class="tab" name="contact">Contact</div>
+            <!-- might end up putting contact on every page -->
         </nav>
     </section>
     <main>
@@ -36,15 +40,14 @@
                     <h3>Project Title</h3>
                 </header>
                 <figure>
-                <img class="thumbnail" src=""/>
-                <figcaption></figcaption>
+                    <img class="thumbnail" src="" />
+                    <figcaption></figcaption>
                 </figure>
                 <p class="date">Project completed around</p>
                 <p class="blurb">This project was an exercise in {{something}}, it utilized {{elements used in project}}</p>
-                
+
                 <nav>
                     <a class="projectLink" href="">link to hosted project</a>
-                    Links to github & social media will go here
                 </nav>
             </article>
         </section>
@@ -78,7 +81,8 @@
                 <h3>Contact Me</h3>
             </header>
             <article>
-                <form> <!-- Form will have inputs for contact info, etc. -->
+                <form>
+                    <!-- Form will have inputs for contact info, etc. -->
                     <fieldset>
                     </fieldset>
                 </form>
@@ -87,10 +91,17 @@
     </main>
     <footer>
         <p>Copyright 2017 Joe Churchman</p>
+        <a class="socialLink" href="https://github.com/jchurchman">
+            <span data-icon="eab0" class="icon-github"></span>
+                    </a>
+                <a class="socialLink" href="https://www.linkedin.com/in/joe-churchman-2007661a/">
+            <span data-icon="eac9" class="icon-linkedin"></span>
+                    </a>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/projects.js"></script>
     <script type="text/javascript" src="./js/projectViewer.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 </body>
+
 </html>

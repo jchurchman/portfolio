@@ -1,8 +1,12 @@
 
 header, nav, footer {
     background-color: #89bdd3;
+    padding: 1%;
 }
 
+footer {
+    font-size: .85em;
+}
 
 article {
     background-color: #c9c9c9;
@@ -20,15 +24,16 @@ aside, form {
     align-items: baseline;
     margin: 0 auto;
     padding: 1%;
+    border-bottom: #3f3f3f solid 1px;
+}
+
+h1 {
+    font-size: 2em;
 }
 
 nav a {
     margin: auto;
     padding: 0 .5em;
-}
-
-nav.hide {
-    display: none;
 }
 
 @media (min-width: 600px) {

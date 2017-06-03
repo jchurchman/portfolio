@@ -3,6 +3,7 @@
 var projectView = {};
 
 projectView.pageLoader = function () {
+    $('#main-nav').hide();
     $('.template').hide();
     $('.content').hide();
     $('#home').fadeIn(500);
