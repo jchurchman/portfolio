@@ -4,23 +4,28 @@ var projectView = {};
 
 projectView.pageLoader = function () {
     $('.template').hide();
-    $('main>section').hide();
-
+    $('.content').hide();
+    $('#home').fadeIn(500);
 };
 
 projectView.tabSelector = function () {
-
     $('.tab').on('click', function() {
-        var $selected = $(this).attr('name');
-
-        $('main>section').hide();
-        console.log($('section').attr('id', $selected ));
-        $('section').attr('id', $selected ).fadeIn(500);
+        $('.content').hide();
+        var selected = $(this).attr('name');
+        $(`#${selected}`).fadeIn(500);
+        $('#main-nav').slideToggle(400);
     });
+};
 
+projectView.togglePhoneMenu = function () {
+    $('.icon-menu').on('click',function(){
+        $('#main-nav').slideToggle(400);
+    });
+    
 };
 
 $(document).ready(function () {
+    projectView.togglePhoneMenu();
     projectView.pageLoader();
-    // projectView.tabSelector();
+    projectView.tabSelector();
 });
