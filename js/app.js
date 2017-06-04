@@ -14,15 +14,8 @@ function Project(projectObject) {
 }
 
 Project.prototype.toHTML = function () {
-    var $newProject = $('article.project-template').clone().removeClass('project-template');
-    $newProject.find('h3').text(this.title);
-    $newProject.find('.projectLink').attr('href', this.link);
-    $newProject.find('img').attr('src', this.thumbnail);
-    $newProject.find('.date').text(this.date);
-    $newProject.find('figcaption').text(this.pitch);
-    $newProject.find('.blurb-body').html(this.blurb);
-
-    return $newProject;
+    var template = Handlebars.compile($('.project-template').html());
+    return template(this);
 };
 
 projectEntries.forEach(function (projectObject) { //eslint-disable-line
@@ -39,11 +32,8 @@ function About(aboutObject) {
 }
 
 About.prototype.toHTML = function () {
-    var $newAbout = $('article.about-template').clone().removeClass('about-template');
-    $newAbout.find('h4').text(this.heading);
-    $newAbout.find('p').html(this.info);
-
-    return $newAbout;
+    var template = Handlebars.compile($('.about-template').html());
+    return template(this);
 };
 
 aboutEntries.forEach(function (aboutObject){ //eslint-disable-line
