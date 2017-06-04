@@ -15,8 +15,6 @@ function Project(projectObject) {
 
 Project.prototype.toHTML = function () {
     var template = Handlebars.compile($('.project-template').html());
-    console.log(template(this));
-
     return template(this);
 };
 
@@ -35,7 +33,6 @@ function About(aboutObject) {
 
 About.prototype.toHTML = function () {
     var template = Handlebars.compile($('.about-template').html());
-    console.log(template(this));
     return template(this);
 };
 
