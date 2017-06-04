@@ -84,6 +84,28 @@
                 <form>
                     <!-- Form will have inputs for contact info, etc. -->
                     <fieldset>
+                        <input type="text" placeholder="Name" id="customer-name" requred>
+                        <input type="text" placeholder="Email address" id="customer-email" requred>
+                        <input type="text" placeholder="Company / Organization" id="customer-org">
+                        <label for="select" class="control-label">You need a...</label>
+                        <select name="requirement">
+                            <option>Website updated</option>
+                            <option>Website designed & developed</option>
+                            <option>Website developed</option>
+                            <option>Website designed</option>
+                            <option>Mobile / tablet app</option>
+                            <option>Ecommerce site</option>
+                            <option>Data visualization</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="input" class="control-label">Budget:</label>
+                        <span id="budgetvalue">${{budgetval}}</span>
+                        <input type="range" step="400" min="1200" max="48000" name="budget" id="budgetslider" value="8000">
+                        <label for="input" class="control-label">Deadline:</label>
+                        <span id="deadlinevalue">{{deadlineval}}</span>
+                        <input type="range" step="1" min="0" max="13" name="deadline" id="deadlineslider" value="0">
+                        <textarea placeholder="Project Details..." id="project-details" rows="4" required></textarea>
+                        <button type="submit" class="button"><span>Send</span></button>
                     </fieldset>
                 </form>
                 Specific contact/link info will be here

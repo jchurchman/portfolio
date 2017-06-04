@@ -92,6 +92,11 @@ h1, h2, h3, h4, h5, h6, p {
     /*margin: 1% 0;*/
 }
 
+select {
+  opacity: 0.65;
+  color: #3f3f3f;
+}
+
 a, .tab {
     text-decoration: none;
     opacity: 0.65;
