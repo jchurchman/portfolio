@@ -31,31 +31,35 @@
             </header>
         </section>
         <section data-category="portfolio">
-            <article class="project-template">
-                <header>
-                    <h3>Project Title</h3>
-                </header>
-                <figure>
-                <img class="thumbnail" src=""/>
-                <figcaption></figcaption>
-                </figure>
-                <p class="date">Project completed around</p>
-                <section class="blurb-body">{{{blurb}}}</section>
-                <a href="#" class="read-more">Read more &rarr;</a>
-                <nav>
-                    <a class="projectLink" href="">link to hosted project</a>
-                    Links to github & social media will go here
-                </nav>
-            </article>
+            <div class="project-template">
+                <article>
+                    <header>
+                        <h3>{{title}}</h3>
+                    </header>
+                    <figure>
+                        <img class="thumbnail" src="{{thumbnail}}"/>
+                        <figcaption>{{pitch}}</figcaption>
+                    </figure>
+                    <p class="date">Project completed around {{date}}</p>
+                    <section class="blurb-body">{{{blurb}}}</section>
+                    <a href="#" class="read-more">Read more &rarr;</a>
+                    <nav>
+                        <a class="projectlink" href="{{link}}">link to hosted project</a>
+                        Links to github & social media will go here
+                    </nav>
+                </article>
+            </div>
         </section>
         <section data-category="about">
             <header>
                 <h3>About Joe</h3>
             </header>
-            <article class="about-template">
-                <h4>{{Bio}}</h4>
-                <p>{{Stuff about Joe goes here}}</p>
-            </article>
+            <div class="about-template">
+                <article>
+                    <h4>{{heading}}</h4>
+                    <p>{{{info}}}</p>
+                </article>
+            </div>
             <aside>
                 <p>Interests</p>
                 <ul>
@@ -81,6 +85,7 @@
         <p>Copyright 2017 Joe Churchman</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="./js/projects.js"></script>
     <script type="text/javascript" src="./js/projectViewer.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
