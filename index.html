@@ -13,60 +13,55 @@
 </head>
 
 <body>
-    <section id="siteHeading">
+    <section id="site-heading">
         <header>
             <h1>Joe Churchman</h1>
             <h2>Ever evolving developer</h2>
             <span data-icon="e9bd" class="icon-menu"></span>
         </header>
-        <nav id="main-nav">
-            <div class="tab" name="home">Home</div>
-            <!-- home tab will reset the menu -->
-            <div class="tab" name="about">About</div>
-            <div class="tab" name="portfolio">Portfolio</div>
-            <div class="tab" name="contact">Contact</div>
-            <!-- might end up putting contact on every page -->
+        <nav>
+            <div name="home">Home</div> <!-- home tab will reset the menu -->
+            <div name="about">About</div>
+            <div name="portfolio">Portfolio</div>
+            <div name="contact">Contact</div> <!-- might end up putting contact on every page -->
         </nav>
     </section>
     <main>
-        <section class="content" id="home">
+        <section data-category="home">
             <header>
                 <h3>This is the home page</h3>
             </header>
         </section>
-        <section class="content" id="portfolio">
-            <article class="template">
-                <header>
-                    <h3>Project Title</h3>
-                </header>
-                <figure>
-                    <img class="thumbnail" src="" />
-                    <figcaption></figcaption>
-                </figure>
-                <p class="date">Project completed around</p>
-                <p class="blurb">This project was an exercise in {{something}}, it utilized {{elements used in project}}</p>
-
-                <nav>
-                    <a class="projectLink" href="">link to hosted project</a>
-                </nav>
-            </article>
+        <section data-category="portfolio">
+            <div class="project-template">
+                <article>
+                    <header>
+                        <h3>{{title}}</h3>
+                    </header>
+                    <figure>
+                        <img class="thumbnail" src="{{thumbnail}}"/>
+                        <figcaption>{{pitch}}</figcaption>
+                    </figure>
+                    <p class="date">Project completed around {{date}}</p>
+                    <section class="blurb-body">{{{blurb}}}</section>
+                    <a href="#" class="read-more">Read more &rarr;</a>
+                    <nav>
+                        <a class="projectlink" href="{{link}}">link to hosted project</a>
+                        Links to github & social media will go here
+                    </nav>
+                </article>
+            </div>
         </section>
-        <section class="content" id="about">
+        <section data-category="about">
             <header>
                 <h3>About Joe</h3>
             </header>
-            <article>
-                <h4>Bio</h4>
-                <p>Stuff about Joe goes here</p>
-            </article>
-            <article>
-                <h4>Work History</h4>
-                <p>Stuff about Joe's work history</p>
-            </article>
-            <article>
-                <h4>Education</h4>
-                <p>Stuff about Joe's education</p>
-            </article>
+            <div class="about-template">
+                <article>
+                    <h4>{{heading}}</h4>
+                    <p>{{{info}}}</p>
+                </article>
+            </div>
             <aside>
                 <p>Interests</p>
                 <ul>
@@ -76,7 +71,7 @@
                 </ul>
             </aside>
         </section>
-        <section class="content" id="contact">
+        <section data-category="contact">
             <header>
                 <h3>Contact Me</h3>
             </header>
@@ -121,6 +116,7 @@
                     </a>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="./js/projects.js"></script>
     <script type="text/javascript" src="./js/projectViewer.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>

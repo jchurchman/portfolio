@@ -2,6 +2,8 @@
 
 var projects = [];
 
+var abouts = [];
+
 function Project(projectObject) {
     this.title = projectObject.title;
     this.link = projectObject.link;
@@ -12,21 +14,32 @@ function Project(projectObject) {
 }
 
 Project.prototype.toHTML = function () {
-    var $newProject = $('article.template').clone().removeClass('template');
-    $newProject.find('h3').text(this.title);
-    $newProject.find('.projectLink').attr('href', this.link);
-    $newProject.find('img').attr('src', this.thumbnail);
-    $newProject.find('.date').text(this.date);
-    $newProject.find('figcaption').text(this.pitch);
-    $newProject.find('.blurb').text(this.blurb);
-
-    return $newProject;
+    var template = Handlebars.compile($('.project-template').html());
+    return template(this);
 };
 
-projectEntries.forEach(function (projectObject) {
+projectEntries.forEach(function (projectObject) { //eslint-disable-line
     projects.push(new Project(projectObject));
 });
 
 projects.forEach(function (project) {
-    $('#portfolio').append(project.toHTML());
+    $('section[data-category="portfolio"]').append(project.toHTML());
+});
+
+function About(aboutObject) {
+    this.heading = aboutObject.heading;
+    this.info = aboutObject.info;
+}
+
+About.prototype.toHTML = function () {
+    var template = Handlebars.compile($('.about-template').html());
+    return template(this);
+};
+
+aboutEntries.forEach(function (aboutObject){ //eslint-disable-line
+    abouts.push(new About(aboutObject));
+});
+
+abouts.forEach(function (about){
+    $('section[data-category="about"] header').after(about.toHTML());
 });
