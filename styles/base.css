@@ -3,13 +3,18 @@
   padding: 0;
 }
 
-body, form, html {
+html {
+  font-size: 1em;
+}
+
+body {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
-    background-color: #e3e3e3;
-    font-size: 1.125em;
-    color: white;
-    font-weight: 900;
+    background-color: #CFD8DC;
+    line-height: 1.45;
+    color: #212121;
+    font-weight: 400;
+    
 }
 @font-face {
   font-family: 'icomoon';
@@ -24,7 +29,7 @@ body, form, html {
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'icomoon' !important; 
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -41,6 +46,7 @@ body, form, html {
 }
 .icon-github:before {
   content: "\e901";
+  color: #FFFFFF;
 }
 .icon-home3:before {
   content: "\e902";
@@ -70,9 +76,10 @@ body, form, html {
   content: "\e9ae";
 }
 .icon-menu:before {
+  font-family: 'icomoon';
   content: "\e9bd";
-  font-size: 1.25em;
-}
+  font-size: 11vw;
+  }
 .icon-info:before {
   content: "\ea0c";
 }
@@ -81,20 +88,11 @@ body, form, html {
 }
 .icon-github2:before {
   content: "\eab0";
+  color: #FFFFFF;
 }
 .icon-linkedin:before {
   content: "\eac9";
-}
-
-
-
-h1, h2, h3, h4, h5, h6, p {
-    /*margin: 1% 0;*/
-}
-
-select {
-  opacity: 0.65;
-  color: #3f3f3f;
+  color: #FFFFFF;
 }
 
 a, .tab {
@@ -110,39 +108,38 @@ a:hover, .tab:hover {
     text-decoration: none;
     opacity: 1;
 }
-/*Settings below imported from type-scale.com for font scaling*/
-@media (min-width: 450px) {
-    html {
-        font-size: 1.125em;
-    }
 
-    body {
-    font-weight: 400;
-    line-height: 1.45;
-    }
 
-    p {
-        margin-bottom: 1.3em;
-    }
+p {
+  margin-bottom: 1.3em;
+  font-size: 1.4vw;
+  }
 
-    h1, h2, h3, h4 {
-    margin: 1.414em 0 0.5em;
-    font-weight: inherit;
-    line-height: 1.2;
-    }
-
-    h1 {
-    font-size: 3.157em;
-    }
-
-    h2 {
-      font-size: 2.369em;
-    }
-
-    h3 {font-size: 1.777em;}
-
-    h4 {font-size: 1.333em;}
-
-    small, .font_small {font-size: 0.75em;}
-        
+h1, h2, h3, h4 {
+  /*margin: 1.414em 0 0.5em;*/
+  font-weight: inherit;
+  line-height: 1.2;
 }
+
+h1 {
+  margin-top: 0;
+  font-size: 5.063em;
+  font-size: 11vw;
+}
+
+h2 {
+  font-size: 3.375em;
+  font-size: 8vw;
+  }
+
+h3 {
+  font-size: 2.25em;
+  font-size: 6vw;
+  }
+
+h4 {
+  font-size: 1.5em;
+  font-size: 4vw;
+  }
+
+small, .font_small {font-size: 0.667em;}

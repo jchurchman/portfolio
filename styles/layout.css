@@ -1,47 +1,41 @@
 #site-heading, footer {
-    margin: auto;
     width: 100%;
     position: fixed;
     z-index: 1000;
 }
 
-span.icon-menu {
-    position: absolute;
-    left: 87.5%;
-    top: 7.5%;
-    font-size: 1.5em;
+#site-heading header {
+    padding: 1vw 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
-#siteHeading h2 {
-    display: none;
+#site-heading nav {
+    position: fixed;
+    top: 25%;
+    left: 40%;
+    padding: 20px;
+    /*margin: auto;*/
+    border-radius: 70px;
 }
 
-.icon-github {
-    position: absolute;
-    left: 2.5%;
-    top: 20%;
+nav div {
+    text-align: center;
+    padding: 20px;
+    font-size: 6vw;
 }
 
-.icon-linkedin {
-    position: absolute;
-    right: 4.5%;
-    top: 20%;
+nav p {
+    font-size: 4vw;
 }
 
 footer {
-    text-align: center;
     bottom: 0;
-    left: 0;
 }
 
-.content {
-    padding-top: 59px;
-    padding-right: 1%;
-    padding-left: 1%;
-    padding-bottom: 32px;
-
-}
-
-@media (min-width: 600px) {
-
+main section {
+    z-index: 500;
+    margin: 0 1%;
 }
