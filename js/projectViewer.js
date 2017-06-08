@@ -3,7 +3,7 @@
 var projectView = {};
 
 projectView.pageLoader = function () {
-    $('.project-template, .about-template, main section').hide(); //removed #site-heading nav
+    $('.project-template, .about-template, main section, #site-heading nav').hide();
     $('section[data-category="home"]').fadeIn(500);
 };
 

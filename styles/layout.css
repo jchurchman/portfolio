@@ -41,14 +41,21 @@ footer {
     
 }
 
-footer p {
+footer * {
     font-size: 4vw;
     margin: 0;
     padding: 1vw;
+    padding-top: 2vw;
+}
+
+.icon-github {
+    font-size: 4.5vw;
 }
 
 main section {
     z-index: 500;
     margin: 0 1vw;
-    padding: 15vh 0 0 0;
+    padding: 0vh 0 0 0;
+    position: relative;
+    top: 17.5vw;
 }

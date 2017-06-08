@@ -3,12 +3,6 @@ header, footer {
     color: #FFFFFF;
 }
 
-main section {
-    background-color: #CFD8DC;
-    color: #757575;
-    border: 3px groove #BDBDBD;
-}
-
 aside {
     background-color: #607D8B;
     color: #212121;
@@ -24,5 +18,18 @@ nav {
 nav div {
     background-color: #CFD8DC;
     border-radius: 100px;
+    border: 3px groove #BDBDBD;
+}
+
+footer * {
+    opacity: 1;
+    font-weight: 600;
+}
+
+/* Main Styles              */
+
+main section {
+    background-color: #CFD8DC;
+    color: #757575;
     border: 3px groove #BDBDBD;
 }
