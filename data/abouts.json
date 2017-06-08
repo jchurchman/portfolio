@@ -1,0 +1,14 @@
+[
+    {
+        "heading": "Bio",
+        "info": "stuff about Joe goes here"
+    },
+    {
+        "heading": "Work History",
+        "info": "stuff about Joe's work history goes here"
+    },
+    {
+        "heading": "Education",
+        "info": "stuff about Joe's education goes here"
+    }
+]
