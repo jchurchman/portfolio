@@ -43,9 +43,23 @@ projectView.limitBlurb = function () {
     });
 };
 
-$(document).ready(function () {
+projectView.initIndexAbout = function() {
+    About.all.forEach(function( about ) {
+        $( 'section[data-category="about"] header').after(about.toHTML());
+    });
+};
+
+projectView.initIndexPage = function() {
+    Project.all.forEach(function( project ) {
+        $( 'section[data-category="portfolio"]' ).append(project.toHTML());
+    });
+
+    About.all.forEach(function( about ) {
+        $( 'section[data-category="about"] header' ).after(about.toHTML);
+    });
+
     projectView.togglePhoneMenu();
     projectView.pageLoader();
     projectView.tabSelector();
     projectView.limitBlurb();
-});
+};
