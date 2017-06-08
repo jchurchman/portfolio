@@ -5,7 +5,7 @@
 }
 
 #site-heading header {
-    padding: 1vw 0;
+    padding: 1vh 0;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -13,19 +13,20 @@
 }
 
 #site-heading nav {
-    padding: 15px;
-    margin: 10% auto;
+    padding: 1vh;
+    margin: 2vh auto;
     width: fit-content;
-    border-radius: 70px;
+    border-radius: 70vh;
     display: flex;
     flex-direction: column;
 }
 
 nav div {
     text-align: center;
-    padding: 15px 10px 5px 10px;
-    font-size: 6vw;
-    margin: 2vw 0;
+    /*padding: 15px 10px 5px 10px;*/
+    padding: 3.5vh 2.5vh 1.5vh 2.5vh;
+    font-size: 4vh;
+    margin: 1vh;
 }
 
 nav p {
@@ -34,9 +35,20 @@ nav p {
 
 footer {
     bottom: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    
+}
+
+footer p {
+    font-size: 4vw;
+    margin: 0;
+    padding: 1vw;
 }
 
 main section {
     z-index: 500;
-    margin: 0 1%;
+    margin: 0 1vw;
+    padding: 15vh 0 0 0;
 }
