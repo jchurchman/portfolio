@@ -48,18 +48,18 @@ var app = app || {};
     };
 
     projectView.initIndexAbout = function () {
-        app.About.all.forEach(function (about) {
+        app.About.all.map(function (about) {
             // console.log(app.About.all);
             $('section[data-category="about"] header').after(about.toHTML());
         });
     };
 
     projectView.initIndexPage = function () {
-        app.Project.all.forEach(function (project) {
+        app.Project.all.map(function (project) {
             $('section[data-category="portfolio"]').append(project.toHTML());
         });
 
-        app.About.all.forEach(function (about) {
+        app.About.all.map(function (about) {
             $('section[data-category="about"] header').after(about.toHTML());
         });
 

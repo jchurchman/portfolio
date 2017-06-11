@@ -21,8 +21,9 @@ var app = app || {};
     };
 
     Project.loadAll = function (rawData) {
-        rawData.forEach(function (ele) {
-            app.Project.all.push(new Project(ele));
+        app.Project.all = rawData.map(function (ele) {
+            // app.Project.all.push(new Project(ele));
+            return new Project(ele);
         });
     };
 
@@ -88,8 +89,6 @@ var app = app || {};
     About.loadAll = function (rawAbout) {
 
         app.About.all = rawAbout.map(function (ele) {
-            console.log(ele);
-            console.log(new About(ele));
             return new About(ele);
         });
 
