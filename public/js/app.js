@@ -22,7 +22,6 @@ var app = app || {};
 
     Project.loadAll = function (rawData) {
         app.Project.all = rawData.map(function (ele) {
-            // app.Project.all.push(new Project(ele));
             return new Project(ele);
         });
     };
@@ -66,14 +65,6 @@ var app = app || {};
         }
     };
 
-    // projectEntries.forEach(function (projectObject) { //eslint-disable-line
-    //     projects.push(new Project(projectObject));
-    // });
-
-    // projects.forEach(function (project) {
-    //     $('section[data-category="portfolio"]').append(project.toHTML());
-    // });
-
     function About(aboutObject) {
         this.heading = aboutObject.heading;
         this.info = aboutObject.info;
@@ -92,9 +83,6 @@ var app = app || {};
             return new About(ele);
         });
 
-        // rawData.forEach(function(ele) {
-        //     About.all.push( new About(ele) );
-        // });
     };
 
     About.runWhenDone = function (data) {
@@ -136,13 +124,6 @@ var app = app || {};
         }
     };
 
-    // aboutEntries.forEach(function (aboutObject){ //eslint-disable-line
-    //     abouts.push(new About(aboutObject));
-    // });;
-
-    // abouts.forEach(function (about){
-    //     $('section[data-category="about"] header').after(about.toHTML());
-    // });
     module.About = About;
     module.Project = Project;
 
