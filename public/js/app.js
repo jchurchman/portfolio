@@ -1,135 +1,149 @@
 'use strict';
 
-function Project(projectObject) {
-    this.title = projectObject.title;
-    this.link = projectObject.link;
-    this.thumbnail = projectObject.thumbnail;
-    this.date = projectObject.date;
-    this.pitch = projectObject.pitch;
-    this.blurb = projectObject.blurb;
-}
+var app = app || {};
 
-Project.all = [];
+(function (module) {
 
-Project.prototype.toHTML = function () {
-    var template = Handlebars.compile($('.project-template').html());
-    return template(this);
-};
-
-Project.loadAll = function (rawData) {
-    rawData.forEach(function(ele) {
-        Project.all.push(new Project(ele));
-    });
-};
-
-Project.runWhenDone = function(data) {
-    localStorage.setItem( 'rawData', JSON.stringify( data ) );
-    Project.loadAll( data );
-    projectView.initIndexPage();
-};
-
-Project.runWhenErr = function( err ) {
-    console.error( 'error', err );
-};
-
-Project.getDBData = function() {
-    $.ajax({
-        type: 'GET',
-        url: './data/projects.json',
-        success: Project.runWhenDone,
-        error: Project.runWhenErr
-    });
-};
-
-Project.checkETag = function() {
-    $.ajax({
-        type: 'HEAD',
-        url: './data/projects.json',
-        success: Project.validateETag,
-        error: Project.runWhenErr
-    });
-};
-
-Project.validateETag = function(data, message, xhr) {
-    let eTag = xhr.getResponseHeader('ETag');
-    if ( eTag === JSON.parse(localStorage.getItem( 'lsProjectTag' ))){
-        Project.loadAll( JSON.parse( localStorage.rawData ) );
-        projectView.initIndexPage();
-    } else {
-        localStorage.setItem( 'lsProjectTag', JSON.stringify( eTag ) );
-        Project.getDBData();
+    function Project(projectObject) {
+        this.title = projectObject.title;
+        this.link = projectObject.link;
+        this.thumbnail = projectObject.thumbnail;
+        this.date = projectObject.date;
+        this.pitch = projectObject.pitch;
+        this.blurb = projectObject.blurb;
     }
-};
 
-// projectEntries.forEach(function (projectObject) { //eslint-disable-line
-//     projects.push(new Project(projectObject));
-// });
+    Project.all = [];
 
-// projects.forEach(function (project) {
-//     $('section[data-category="portfolio"]').append(project.toHTML());
-// });
+    Project.prototype.toHTML = function () {
+        var template = Handlebars.compile($('.project-template').html());
+        return template(this);
+    };
 
-function About(aboutObject) {
-    this.heading = aboutObject.heading;
-    this.info = aboutObject.info;
-}
+    Project.loadAll = function (rawData) {
+        app.Project.all = rawData.map(function (ele) {
+            // app.Project.all.push(new Project(ele));
+            return new Project(ele);
+        });
+    };
 
-About.all = [];
+    Project.runWhenDone = function (data) {
+        localStorage.setItem('rawData', JSON.stringify(data));
+        app.Project.loadAll(data);
+        app.projectView.initIndexPage();
+    };
 
-About.prototype.toHTML = function () {
-    var template = Handlebars.compile($('.about-template').html());
-    return template(this);
-};
+    Project.runWhenErr = function (err) {
+        console.error('error', err);
+    };
 
-About.loadAll = function(rawData) {
-    rawData.forEach(function(ele) {
-        About.all.push( new About(ele) );
-    });
-};
+    Project.getDBData = function () {
+        $.ajax({
+            type: 'GET',
+            url: './data/projects.json',
+            success: app.Project.runWhenDone,
+            error: app.Project.runWhenErr
+        });
+    };
 
-About.runWhenDone = function(data) {
-    localStorage.setItem( 'rawAbout', JSON.stringify( data ) );
-    About.loadAll( data );
-    projectView.initIndexAbout();
-};
+    Project.checkETag = function () {
+        $.ajax({
+            type: 'HEAD',
+            url: './data/projects.json',
+            success: app.Project.validateETag,
+            error: app.Project.runWhenErr
+        });
+    };
 
-About.runWhenErr = function( err ) {
-    console.error( 'error', err );
-};
+    Project.validateETag = function (data, message, xhr) {
+        let eTag = xhr.getResponseHeader('ETag');
+        if (eTag === JSON.parse(localStorage.getItem('lsProjectTag'))) {
+            app.Project.loadAll(JSON.parse(localStorage.rawData));
+            app.projectView.initIndexPage();
+        } else {
+            localStorage.setItem('lsProjectTag', JSON.stringify(eTag));
+            app.Project.getDBData();
+        }
+    };
 
-About.getDBData = function() {
-    $.ajax({
-        type: 'GET',
-        url: './data/abouts.json',
-        success: About.runWhenDone,
-        error: About.runWhenErr
-    });
-};
+    // projectEntries.forEach(function (projectObject) { //eslint-disable-line
+    //     projects.push(new Project(projectObject));
+    // });
 
-About.checkETag = function() {
-    $.ajax({
-        type: 'HEAD',
-        url: './data/abouts.json',
-        success: About.validateETag,
-        error: About.runWhenErr
-    });
-};
+    // projects.forEach(function (project) {
+    //     $('section[data-category="portfolio"]').append(project.toHTML());
+    // });
 
-About.validateETag = function(data, message, xhr) {
-    let eTag = xhr.getResponseHeader('ETag');
-    if ( eTag === JSON.parse( localStorage.getItem( 'lsAboutTag' ))){
-        About.loadAll( JSON.parse( localStorage.rawData ) );
-        projectView.initIndexAbout();
-    } else {
-        localStorage.setItem( 'lsAboutTag', JSON.stringify( eTag ) );
-        About.getDBData();
+    function About(aboutObject) {
+        this.heading = aboutObject.heading;
+        this.info = aboutObject.info;
     }
-};
 
-// aboutEntries.forEach(function (aboutObject){ //eslint-disable-line
-//     abouts.push(new About(aboutObject));
-// });;
+    About.all = [];
 
-// abouts.forEach(function (about){
-//     $('section[data-category="about"] header').after(about.toHTML());
-// });
+    About.prototype.toHTML = function () {
+        var template = Handlebars.compile($('.about-template').html());
+        return template(this);
+    };
+
+    About.loadAll = function (rawAbout) {
+
+        app.About.all = rawAbout.map(function (ele) {
+            return new About(ele);
+        });
+
+        // rawData.forEach(function(ele) {
+        //     About.all.push( new About(ele) );
+        // });
+    };
+
+    About.runWhenDone = function (data) {
+        localStorage.setItem('rawAbout', JSON.stringify(data));
+        app.About.loadAll(data);
+        app.projectView.initIndexAbout();
+    };
+
+    About.runWhenErr = function (err) {
+        console.error('error', err);
+    };
+
+    About.getDBData = function () {
+        $.ajax({
+            type: 'GET',
+            url: './data/abouts.json',
+            success: app.About.runWhenDone,
+            error: app.About.runWhenErr
+        });
+    };
+
+    About.checkETag = function () {
+        $.ajax({
+            type: 'HEAD',
+            url: './data/abouts.json',
+            success: app.About.validateETag,
+            error: app.About.runWhenErr
+        });
+    };
+
+    About.validateETag = function (data, message, xhr) {
+        let eTag = xhr.getResponseHeader('ETag');
+        if (eTag === JSON.parse(localStorage.getItem('lsAboutTag'))) {
+            app.About.loadAll(JSON.parse(localStorage.rawAbout));
+            app.projectView.initIndexAbout();
+        } else {
+            localStorage.setItem('lsAboutTag', JSON.stringify(eTag));
+            app.About.getDBData();
+        }
+    };
+
+    // aboutEntries.forEach(function (aboutObject){ //eslint-disable-line
+    //     abouts.push(new About(aboutObject));
+    // });;
+
+    // abouts.forEach(function (about){
+    //     $('section[data-category="about"] header').after(about.toHTML());
+    // });
+    module.About = About;
+    module.Project = Project;
+
+}(app));
