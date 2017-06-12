@@ -1,13 +1,61 @@
 #site-heading, footer {
-    margin: auto;
     width: 100%;
+    position: fixed;
+    z-index: 1000;
 }
 
-span {
-    position: absolute;
-    left: 92.5%;
-    top: 1.5%;
+#site-heading header {
+    padding: 1vh 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
-@media (min-width: 600px) {
 
+#site-heading nav {
+    padding: 1vh;
+    margin: 2vh auto;
+    width: fit-content;
+    border-radius: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav div {
+    text-align: center;
+    /*padding: 15px 10px 5px 10px;*/
+    padding: 3.5vh 2.5vh 1.5vh 2.5vh;
+    font-size: 4vh;
+    margin: 1vh;
+}
+
+nav p {
+    font-size: 4vw;
+}
+
+footer {
+    bottom: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    
+}
+
+footer * {
+    font-size: 4vw;
+    margin: 0;
+    padding: 1vw;
+    padding-top: 2vw;
+}
+
+.icon-github {
+    font-size: 4.5vw;
+}
+
+main section {
+    z-index: 500;
+    margin: 0 1vw;
+    padding: 0vh 0 0 0;
+    position: relative;
+    top: 17.5vw;
 }

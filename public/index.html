@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +11,29 @@
     <link rel="stylesheet" type="text/css" href="./styles/state.css">
     <title>Joe Churchman</title>
 </head>
+
 <body>
     <section id="site-heading">
         <header>
             <h1>Joe Churchman</h1>
-            <h2>Ever evolving developer</h2>
             <span data-icon="e9bd" class="icon-menu"></span>
         </header>
         <nav>
-            <div name="home">Home</div> <!-- home tab will reset the menu -->
-            <div name="about">About</div>
-            <div name="portfolio">Portfolio</div>
-            <div name="contact">Contact</div> <!-- might end up putting contact on every page -->
+            <div name="home" class="icon-home3"><p class ="">Home</p></div> <!-- home tab will reset the menu -->
+            <div name="about" class="icon-profile"><p>About</p></div>
+            <div name="portfolio" class="icon-briefcase"><p>Portfolio</p></div>
+            <div name="contact" class="icon-mail4"><p>Contact</p></div> <!-- might end up putting contact on every page -->
         </nav>
     </section>
     <main>
         <section data-category="home">
             <header>
+                <h2>Ever evolving developer</h2>
                 <h3>This is the home page</h3>
             </header>
+            <article>
+                <p>Welcome to the site message</p>
+            </article>
         </section>
         <section data-category="portfolio">
             <div class="project-template">
@@ -74,15 +79,44 @@
                 <h3>Contact Me</h3>
             </header>
             <article>
-                <form> <!-- Form will have inputs for contact info, etc. -->
+                <form>
+                    <!-- Form will have inputs for contact info, etc. -->
                     <fieldset>
+                        <input type="text" placeholder="Name" id="customer-name" requred>
+                        <input type="text" placeholder="Email address" id="customer-email" requred>
+                        <input type="text" placeholder="Company / Organization" id="customer-org">
+                        <label for="select" class="control-label">You need a...</label>
+                        <select name="requirement">
+                            <option>Website updated</option>
+                            <option>Website designed & developed</option>
+                            <option>Website developed</option>
+                            <option>Website designed</option>
+                            <option>Mobile / tablet app</option>
+                            <option>Ecommerce site</option>
+                            <option>Data visualization</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="input" class="control-label">Budget:</label>
+                        <span id="budgetvalue">${{budgetval}}</span>
+                        <input type="range" step="400" min="1200" max="48000" name="budget" id="budgetslider" value="8000">
+                        <label for="input" class="control-label">Deadline:</label>
+                        <span id="deadlinevalue">{{deadlineval}}</span>
+                        <input type="range" step="1" min="0" max="13" name="deadline" id="deadlineslider" value="0">
+                        <textarea placeholder="Project Details..." id="project-details" rows="4" required></textarea>
+                        <button type="submit" class="button"><span>Send</span></button>
                     </fieldset>
                 </form>
                 Specific contact/link info will be here
             </article>
     </main>
     <footer>
+        <a class="socialLink" href="https://github.com/jchurchman">
+            <span data-icon="eab0" class="icon-github"></span>
+                    </a>
         <p>Copyright 2017 Joe Churchman</p>
+                <a class="socialLink" href="https://www.linkedin.com/in/joe-churchman-2007661a/">
+            <span data-icon="eac9" class="icon-linkedin"></span>
+                    </a>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
@@ -92,4 +126,5 @@
     <script> app.Project.checkETag() </script>
     <script> app.About.checkETag() </script>
 </body>
+
 </html>

@@ -1,36 +1,35 @@
-
-header, nav, footer {
-    background-color: #89bdd3;
+header, footer {
+    background-color: #455A64;
+    color: #FFFFFF;
 }
 
-
-article {
-    background-color: #c9c9c9;
+aside {
+    background-color: #607D8B;
+    color: #212121;
 }
 
-aside, form {
-    background-color: #9ad3de;
+nav {
+    background-color: #607D8B;
+    color: #757575;
+    border: 3px groove #BDBDBD;
+
 }
 
-#site-heading nav {
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    align-items: baseline;
-    margin: 0 auto;
-    padding: 1%;
+nav div {
+    background-color: #CFD8DC;
+    border-radius: 100px;
+    border: 3px groove #BDBDBD;
 }
 
-nav a {
-    margin: auto;
-    padding: 0 .5em;
+footer * {
+    opacity: 1;
+    font-weight: 600;
 }
 
-nav.hide {
-    display: none;
-}
+/* Main Styles              */
 
-@media (min-width: 600px) {
-
+main section {
+    background-color: #CFD8DC;
+    color: #757575;
+    border: 3px groove #BDBDBD;
 }
