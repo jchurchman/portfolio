@@ -47,25 +47,26 @@ var app = app || {};
         });
     };
 
-    projectView.initIndexAbout = function () {
-        app.About.all.forEach(function (about) {
-            $('section[data-category="about"] header').after(about.toHTML());
-        });
-    };
+    // projectView.initIndexAbout = function () {
+    //     app.About.all.forEach(function (about) {
+    //         $('section[data-category="about"] header').after(about.toHTML());
+    //     });
+    // };
 
     projectView.initIndexPage = function () {
         app.Project.all.forEach(function (project) {
             $('section[data-category="portfolio"]').append(project.toHTML());
         });
 
-        app.About.all.forEach(function (about) {
-            $('section[data-category="about"] header').after(about.toHTML());
-        });
+        // app.About.all.forEach(function (about) {
+        //     $('section[data-category="about"] header').after(about.toHTML());
+        // });
 
         app.projectView.togglePhoneMenu();
         app.projectView.pageLoader();
         app.projectView.tabSelector();
         app.projectView.limitBlurb();
+        app.aboutView.initIndexAbout();
     };
 
     module.projectView = projectView;

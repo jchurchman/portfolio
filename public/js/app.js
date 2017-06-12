@@ -88,7 +88,7 @@ var app = app || {};
     About.runWhenDone = function (data) {
         localStorage.setItem('rawAbout', JSON.stringify(data));
         app.About.loadAll(data);
-        app.projectView.initIndexAbout();
+        app.aboutView.initIndexAbout();
     };
 
     About.runWhenErr = function (err) {
@@ -117,7 +117,7 @@ var app = app || {};
         let eTag = xhr.getResponseHeader('ETag');
         if (eTag === JSON.parse(localStorage.getItem('lsAboutTag'))) {
             app.About.loadAll(JSON.parse(localStorage.rawAbout));
-            app.projectView.initIndexAbout();
+            app.aboutView.initIndexAbout();
         } else {
             localStorage.setItem('lsAboutTag', JSON.stringify(eTag));
             app.About.getDBData();
