@@ -10,33 +10,8 @@
     <link rel="stylesheet" type="text/css" href="./styles/module.css">
     <link rel="stylesheet" type="text/css" href="./styles/state.css">
     <title>Joe Churchman</title>
-</head>
-
-<body>
-    <section id="site-heading">
-        <header>
-            <h1>Joe Churchman</h1>
-            <span data-icon="e9bd" class="icon-menu"></span>
-        </header>
-        <nav>
-            <div name="home" class="icon-home3"><p class ="">Home</p></div> <!-- home tab will reset the menu -->
-            <div name="about" class="icon-profile"><p>About</p></div>
-            <div name="portfolio" class="icon-briefcase"><p>Portfolio</p></div>
-            <div name="contact" class="icon-mail4"><p>Contact</p></div> <!-- might end up putting contact on every page -->
-        </nav>
-    </section>
-    <main>
-        <section data-category="home">
-            <header>
-                <h2>Ever evolving developer</h2>
-                <h3>This is the home page</h3>
-            </header>
-            <article>
-                <p>Welcome to the site message</p>
-            </article>
-        </section>
-        <section data-category="portfolio">
-            <div class="project-template">
+    <script id="project-template" type="text/x-handlebars-template">
+    <div>
                 <article>
                     <header>
                         <h3>{{title}}</h3>
@@ -54,17 +29,48 @@
                     </nav>
                 </article>
             </div>
-        </section>
-        <section data-category="about">
-            <header>
-                <h3>About Joe</h3>
-            </header>
-            <div class="about-template">
+    </script>
+    <script id="about-template" type="text/x-handlebars-template">
+        <div>
                 <article>
                     <h4>{{heading}}</h4>
                     <p>{{{info}}}</p>
                 </article>
             </div>
+    </script>
+</head>
+
+<body>
+    <section id="site-heading">
+        <header>
+            <h1>Joe Churchman</h1>
+            <span data-icon="e9bd" class="icon-menu"></span>
+        </header>
+        <nav>
+            <div name="home" class="icon-home3"><a href="/"> Home</a></div> <!-- home tab will reset the menu -->
+            <div name="about"><a href="/about" class="icon-profile"> About</a></div>
+            <div name="portfolio"><a href="/project" class="icon-briefcase">Portfolio</a></div>
+            <div name="contact"><a href="/contact" class="icon-mail4">Contact</a></div> <!-- might end up putting contact on every page -->
+        </nav>
+    </section>
+    <main>
+        <section id="home">
+            <header>
+                <h2>Ever evolving developer</h2>
+                <h3>This is the home page</h3>
+            </header>
+            <article>
+                <p>Welcome to the site message</p>
+            </article>
+        </section>
+        <section id="portfolio">
+            
+        </section>
+        <section id="about">
+            <header>
+                <h3>About Joe</h3>
+            </header>
+            
             <aside>
                 <p>Interests</p>
                 <ul>
@@ -74,7 +80,7 @@
                 </ul>
             </aside>
         </section>
-        <section data-category="contact">
+        <section id="contact">
             <header>
                 <h3>Contact Me</h3>
             </header>
@@ -119,13 +125,25 @@
                     </a>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script type="text/javascript" src="./js/projects.js"></script>
-    <script type="text/javascript" src="./js/aboutViewer.js"></script>
-    <script type="text/javascript" src="./js/projectViewer.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
-    <script> app.Project.checkETag() </script>
-    <script> app.About.checkETag() </script>
+    <script type="text/javascript" src="./scripts/models/project.js"></script>
+    <script type="text/javascript" src="./scripts/models/about.js"></script>
+
+    <script type="text/javascript" src="./scripts/viewers/aboutViewer.js"></script>
+    <script type="text/javascript" src="./scripts/viewers/contactViewer.js"></script>
+    <script type="text/javascript" src="./scripts/viewers/projectViewer.js"></script>
+
+    <script type="text/javascript" src="./scripts/controllers/aboutController.js"></script>
+
+    <script type="text/javascript" src="./scripts/controllers/contactController.js"></script>
+
+    <script type="text/javascript" src="./scripts/controllers/projectController.js"></script>
+    <script type="text/javascript" src="./scripts/controllers/homeController.js"></script>
+
+    <script type="text/javascript" src="./scripts/controllers/routes.js"></script>
+    <!--<script> app.Project.checkETag() </script>
+    <script> app.About.checkETag() </script>-->
 </body>
 
 </html>
