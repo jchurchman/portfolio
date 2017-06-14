@@ -5,8 +5,7 @@ var app = app || {};
     const projectController = {};
     projectController.index = () => {
         app.Project.validateEtag(app.projectView.initIndexPage);
-        $('.project-template, .about-template, main section, #site-heading nav').hide();
-        $('section [data-category="home"]').fadeIn(500);
+        $('#portfolio').show().siblings().hide();
     };
 
     module.projectController = projectController;

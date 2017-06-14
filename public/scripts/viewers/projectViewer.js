@@ -17,6 +17,7 @@ var app = app || {};
         $('.icon-menu').on('click', function () {
             $('#site-heading nav').slideToggle(400);
         });
+
     };
 
     projectView.limitBlurb = function () {

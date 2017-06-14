@@ -5,8 +5,7 @@ var app = app || {};
     const aboutController = {};
     aboutController.index = () => {
         app.About.validateEtag(app.aboutView.initIndexAbout);
-        $('.project-template, .about-template, main section, #site-heading nav').hide();
-        $('section [data-category="about"]').fadeIn(500);
+        $('#about').show().siblings().hide();
     };
 
     module.aboutController = aboutController;

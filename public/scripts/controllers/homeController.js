@@ -4,10 +4,9 @@ var app = app || {};
 (function (module) {
     const homeController = {};
     homeController.index = () => {
-        $('section [data-category="home"]').show().siblings().hide();
+        $('#home').show().siblings().hide();
+        app.projectView.togglePhoneMenu();
+        // $('#site-heading nav').hide();
     };
     module.homeController = homeController;
-    // app.projectView.initIndexPage();
-    app.homeController.index();
-    app.projectView.togglePhoneMenu();
 }(app));
