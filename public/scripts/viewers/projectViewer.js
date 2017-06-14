@@ -1,15 +1,13 @@
 'use strict';
-
-var app = app || {};// eslint-disable-line
+var app = app || {};
 
 (function (module) {
-
     const projectView = {};
 
-    projectView.pageLoader = function () {
-        $('.project-template, .about-template, main section, #site-heading nav').hide();
-        $('section[data-category="home"]').fadeIn(500);
-    };
+    // projectView.pageLoader = function () {
+    //     $('.project-template, .about-template, main section, #site-heading nav').hide();
+    //     $('section[data-category="home"]').fadeIn(500);
+    // };
 
     projectView.tabSelector = function () {
         $('nav div').on('click', function () {

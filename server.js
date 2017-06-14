@@ -1,12 +1,15 @@
 'use strict';
 
 const express = require ('express');
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 3000;
 const app = express();
 
-const bodyParser = require('body-parser').urlencoded({ extended: true });
-const PORT = process.env.PORT || 3000;
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('./public'));
+
+app.get('/', (req, res) => res.sendFile('index.html', {root: './public'}));
 
 app.post('/projects', bodyParser, function (request, response ) {
     console.log(request.body);
@@ -14,5 +17,5 @@ app.post('/projects', bodyParser, function (request, response ) {
 });
 
 app.listen(PORT, function () {
-    console.log( 'Yup' );
+    console.log( `Yup! on port ${PORT}!` );
 });
