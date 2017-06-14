@@ -17,5 +17,5 @@ app.post('/projects', bodyParser, function (request, response ) {
 });
 
 app.listen(PORT, function () {
-    console.log( `Yup! on port ${PORT}!` );
+    console.log( `On port ${PORT}? Yup!` );
 });

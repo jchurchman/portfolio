@@ -4,19 +4,14 @@ var app = app || {};
 (function (module) {
     const projectView = {};
 
-    // projectView.pageLoader = function () {
-    //     $('.project-template, .about-template, main section, #site-heading nav').hide();
-    //     $('section[data-category="home"]').fadeIn(500);
+    // projectView.tabSelector = function () {
+    //     $('nav div').on('click', function () {
+    //         var selected = $(this).attr('name');
+    //         $('main section').hide();
+    //         $(`section[data-category="${selected}"]`).fadeIn(500);
+    //         $('#site-heading nav').slideToggle(400);
+    //     });
     // };
-
-    projectView.tabSelector = function () {
-        $('nav div').on('click', function () {
-            var selected = $(this).attr('name');
-            $('main section').hide();
-            $(`section[data-category="${selected}"]`).fadeIn(500);
-            $('#site-heading nav').slideToggle(400);
-        });
-    };
 
     projectView.togglePhoneMenu = function () {
         $('.icon-menu').on('click', function () {
@@ -45,24 +40,14 @@ var app = app || {};
         });
     };
 
-    // projectView.initIndexAbout = function () {
-    //     app.About.all.forEach(function (about) {
-    //         $('section[data-category="about"] header').after(about.toHTML());
-    //     });
-    // };
-
     projectView.initIndexPage = function () {
         app.Project.all.forEach(function (project) {
             $('section[data-category="portfolio"]').append(project.toHTML());
         });
 
-        // app.About.all.forEach(function (about) {
-        //     $('section[data-category="about"] header').after(about.toHTML());
-        // });
-
         app.projectView.togglePhoneMenu();
-        app.projectView.pageLoader();
-        app.projectView.tabSelector();
+        // app.projectView.pageLoader();
+        // app.projectView.tabSelector();
         app.projectView.limitBlurb();
         app.aboutView.initIndexAbout();
     };
