@@ -14,10 +14,11 @@ var app = app || {};
     // };
 
     projectView.togglePhoneMenu = function () {
+        // console.log('app.projectView.togglePhoneMenu');
         $('.icon-menu').on('click', function () {
+            // console.log('menu icon clicked');
             $('#site-heading nav').slideToggle(400);
         });
-
     };
 
     projectView.limitBlurb = function () {
@@ -46,7 +47,7 @@ var app = app || {};
             $('section[data-category="portfolio"]').append(project.toHTML());
         });
 
-        app.projectView.togglePhoneMenu();
+        // app.projectView.togglePhoneMenu();
         // app.projectView.pageLoader();
         // app.projectView.tabSelector();
         app.projectView.limitBlurb();
