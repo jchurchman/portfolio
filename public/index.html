@@ -38,6 +38,22 @@
                 </article>
             </div>
     </script>
+    <script id="repo-template" type="text/x-handlebars-template">
+        <li>
+            <a href="{{html_url}}" target="_blank">
+                <h3>{{name}}</h3>
+            </a>
+            {{#if description}}
+                <p>Description: {{description}}</p>
+            {{/if}}
+            <p>Language: {{language}}</p>
+            <p>Created: {{created_at}}</p>
+            <p>Last updated: {{updated_at}}</p>
+            {{#if watchers_count}}
+                <p>{{wathers_count}} watching this repo</p>
+            {{/if}}
+        </li>
+    </script>
 </head>
 
 <body>
@@ -129,10 +145,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="./scripts/models/project.js"></script>
     <script type="text/javascript" src="./scripts/models/about.js"></script>
+    <script type="text/javascript" src="./scripts/models/repos.js"></script>
 
     <script type="text/javascript" src="./scripts/viewers/aboutViewer.js"></script>
     <script type="text/javascript" src="./scripts/viewers/contactViewer.js"></script>
     <script type="text/javascript" src="./scripts/viewers/projectViewer.js"></script>
+    <script type="text/javascript" src="./scripts/viewers/repoViewer.js"></script>
 
     <script type="text/javascript" src="./scripts/controllers/aboutController.js"></script>
 
