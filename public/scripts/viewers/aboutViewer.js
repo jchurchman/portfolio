@@ -6,10 +6,8 @@ var app = app || {}; // eslint-disable-line
     const aboutView = {};
 
     aboutView.initIndexAbout = () => {
-        app.About.all.forEach( (aboutObj) => {
-            console.log(aboutObj);
-            console.log(aboutObj.toHTML(this));
-            $('#about header').after(aboutObj.toHTML(this));
+        app.About.all.forEach( aboutObj => {
+            $('#about header').append(aboutObj.toHTML('#about-template'));
         });
     };
 

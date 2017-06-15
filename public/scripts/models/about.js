@@ -11,8 +11,9 @@ var app = app || {}; // eslint-disable-line
     About.all = [];
 
     About.prototype.toHTML = function () {
-        let template = Handlebars.compile($('.about-template').text());
-        return template();
+        let templateFiller = Handlebars.compile($('#about-template').text());
+        // console.log(templateFiller);
+        return templateFiller(this);
     };
 
     About.loadAll = (rawAbout) => {
