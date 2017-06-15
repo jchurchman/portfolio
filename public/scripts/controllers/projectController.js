@@ -4,8 +4,9 @@ var app = app || {};
 (function (module) {
     const projectController = {};
     projectController.index = () => {
-        app.Project.validateEtag(app.projectView.initIndexPage);
         $('#portfolio').show().siblings().hide();
+        $('#site-heading nav').slideToggle(400);
+        app.Project.checkETag();
     };
 
     module.projectController = projectController;

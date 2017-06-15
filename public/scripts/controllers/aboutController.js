@@ -4,8 +4,9 @@ var app = app || {};
 (function (module) {
     const aboutController = {};
     aboutController.index = () => {
-        app.About.validateEtag(app.aboutView.initIndexAbout);
         $('#about').show().siblings().hide();
+        $('#site-heading nav').slideToggle(400);
+        app.About.checkETag();
     };
 
     module.aboutController = aboutController;
