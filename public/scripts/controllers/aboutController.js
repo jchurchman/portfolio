@@ -4,8 +4,10 @@ var app = app || {};
 (function (module) {
     const aboutController = {};
     aboutController.index = () => {
-        app.About.validateETag(app.aboutView.initIndexAbout);
         $('#about').show().siblings().hide();
+        $('#site-heading nav').slideToggle(400);
+        app.About.checkETag();
+        app.repos.requestRepos(app.repoView.index);
     };
 
     module.aboutController = aboutController;

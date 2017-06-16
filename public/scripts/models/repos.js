@@ -8,7 +8,7 @@ var app = app || {};
 
     repos.requestRepos = function (callback) {
         $.ajax({
-            url: `https://api.github.com/user/repos`,
+            url: 'https://api.github.com/user/repos',
             type: 'GET',
             headers: {'Authorization': `token ${githubToken}`} //eslint-disable-line
         })

@@ -9,8 +9,8 @@ var app = app || {};
 
     Project.all = [];
 
-    Project.prototype.toHTML = () => {
-        var template = Handlebars.compile($('.project-template').html());
+    Project.prototype.toHTML = function () {
+        let template = Handlebars.compile($('#project-template').text());
         return template(this);
     };
 
@@ -39,14 +39,14 @@ var app = app || {};
         $.ajax({
             type: 'HEAD',
             url: './data/projects.json',
-            success: app.Project.validateEtag,
+            success: app.Project.validateETag,
             error: app.Project.runWhenErr
         });
     };
 
-    Project.validateEtag = (data, message, xhr) => {
+    Project.validateETag = (data, message, xhr) => {
         let eTag = xhr.getResponseHeader('ETag');
-        if (eTag === JSON.parse(localStorage.getItem('lsProjectTag'))) {
+        if (eTag === localStorage.getItem('lsProjectTag')) {
             app.Project.loadAll(JSON.parse(localStorage.rawData));
             app.projectView.initIndexPage();
         } else {

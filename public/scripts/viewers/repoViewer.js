@@ -7,14 +7,17 @@ var app = app || {};
     const ui = function () {
         let $about = $('#about');
 
-        $about.find('ul').empthy();
+        $about.find('ul').empty();
         $about.show().siblings().hide();
     };
 
     repoView.index = function () {
         ui();
         var render = Handlebars.compile($('#repo-template').text());
-        $('#about ul').append(app.repos.with('owner.login' === 'jchurchman').map(render));
+        // console.log('render is ', render);
+        // console.log('app.repos.all is ', app.repos.all);
+        // console.log('app.repos.with("name") is ', app.repos.with('name'));
+        $('#about ul').append(app.repos.with('name').map(render));
     };
 
     module.repoView = repoView;
