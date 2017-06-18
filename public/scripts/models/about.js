@@ -12,34 +12,31 @@ var app = app || {}; // eslint-disable-line
 
     About.prototype.toHTML = function () {
         let templateFiller = Handlebars.compile($('#about-template').text());
-        // console.log(templateFiller);
         return templateFiller(this);
     };
 
     About.loadAll = (rawAbout) => {
-        // console.log(rawAbout);
-        app.About.all = rawAbout.map( (ele) => new About(ele) );
-        // console.log(app.About.all);
+        app.About.all = rawAbout.map((ele) => new About(ele));
     };
 
-    About.runWhenDone = (data) =>{
+    About.runWhenDone = (data) => {
         localStorage.setItem('rawAbout', JSON.stringify(data));
         app.About.loadAll(data);
         app.aboutView.initIndexAbout();
     };
 
-    About.runWhenErr = (err) => console.error( 'error', err );
+    About.runWhenErr = (err) => console.error('error', err);
 
     About.getDBData = () => {
         $.ajax({
             type: 'GET',
             url: './data/abouts.json',
             success: app.About.runWhenDone,
-            error: app.About.runWhenErr});
+            error: app.About.runWhenErr
+        });
     };
 
     About.checkETag = () => {
-        // console.log('app.About.checkETag');
         $.ajax({
             type: 'HEAD',
             url: './data/abouts.json',
@@ -49,7 +46,6 @@ var app = app || {}; // eslint-disable-line
     };
 
     About.validateETag = (data, message, xhr) => {
-        // console.log('app.About.validateETag');
         let eTag = xhr.getResponseHeader('ETag');
         if (eTag === localStorage.getItem('lsAboutTag')) {
             app.About.loadAll(JSON.parse(localStorage.rawAbout));
