@@ -5,9 +5,7 @@ var app = app || {};  //eslint-disable-line
     const projectView = {};
 
     projectView.togglePhoneMenu = function () {
-        // console.log('app.projectView.togglePhoneMenu');
         $('.icon-menu').on('click', function () {
-            // console.log('menu icon clicked');
             $('#site-heading nav').slideToggle(400);
         });
     };
@@ -35,7 +33,7 @@ var app = app || {};  //eslint-disable-line
 
     projectView.initIndexPage = function () {
 
-        app.Project.all.forEach( projectObj => {
+        app.Project.all.forEach(projectObj => {
             $('#portfolio').append(projectObj.toHTML('#project-template'));
         });
 

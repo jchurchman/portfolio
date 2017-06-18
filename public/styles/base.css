@@ -9,7 +9,6 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-family: 'Raleway', sans-serif;
     background-color: #CFD8DC;
     line-height: 1.45;
     color: #212121;
@@ -116,7 +115,7 @@ p {
   }
 
 h1, h2, h3, h4 {
-  /*margin: 1.414em 0 0.5em;*/
+  font-family: 'Raleway', sans-serif;
   font-weight: inherit;
   line-height: 1.2;
 }
