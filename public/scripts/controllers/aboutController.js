@@ -1,5 +1,5 @@
 'use strict';
-var app = app || {};
+var app = app || {};  //eslint-disable-line 
 
 (function (module) {
     const aboutController = {};
@@ -7,6 +7,7 @@ var app = app || {};
         $('#about').show().siblings().hide();
         $('#site-heading nav').slideToggle(400);
         app.About.checkETag();
+        app.repos.requestRepos(app.repoView.index);
     };
 
     module.aboutController = aboutController;

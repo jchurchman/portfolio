@@ -11,32 +11,48 @@
     <link rel="stylesheet" type="text/css" href="./styles/state.css">
     <title>Joe Churchman</title>
     <script id="project-template" type="text/x-handlebars-template">
-    <div>
-                <article>
-                    <header>
-                        <h3>{{title}}</h3>
-                    </header>
-                    <figure>
-                        <img class="thumbnail" src="{{thumbnail}}"/>
-                        <figcaption>{{pitch}}</figcaption>
-                    </figure>
-                    <p class="date">Project completed around {{date}}</p>
-                    <section class="blurb-body">{{{blurb}}}</section>
-                    <a href="#" class="read-more">Read more &rarr;</a>
-                    <nav>
-                        <a class="projectlink" href="{{link}}">link to hosted project</a>
-                        Links to github & social media will go here
-                    </nav>
-                </article>
-            </div>
+        <div>
+            <article>
+                <header>
+                    <h3>{{title}}</h3>
+                </header>
+                <figure>
+                    <img class="thumbnail" src="{{thumbnail}}"/>
+                    <figcaption>{{pitch}}</figcaption>
+                </figure>
+                <p class="date">Project completed around {{date}}</p>
+                <section class="blurb-body">{{{blurb}}}</section>
+                <a href="#" class="read-more">Read more &rarr;</a>
+                <nav>
+                    <a class="projectlink" href="{{link}}">link to hosted project</a>
+                    Links to github & social media will go here
+                </nav>
+            </article>
+        </div>
     </script>
     <script id="about-template" type="text/x-handlebars-template">
         <div>
-                <article>
-                    <h4>{{heading}}</h4>
-                    <p>{{{info}}}</p>
-                </article>
-            </div>
+            <article>
+                <h4>{{heading}}</h4>
+                <p>{{{info}}}</p>
+            </article>
+        </div>
+    </script>
+    <script id="repo-template" type="text/x-handlebars-template">
+        <li>
+            <a href="{{html_url}}" target="_blank">
+                <h3>{{name}}</h3>
+            </a>
+            {{#if description}}
+                <p>Description: {{description}}</p>
+            {{/if}}
+            <p>Language: {{language}}</p>
+            <p>Created: {{created_at}}</p>
+            <p>Last updated: {{updated_at}}</p>
+            {{#if watchers_count}}
+                <p>{{wathers_count}} watching this repo</p>
+            {{/if}}
+        </li>
     </script>
 </head>
 
@@ -70,7 +86,6 @@
             <header>
                 <h3>About Joe</h3>
             </header>
-            
             <aside>
                 <p>Interests</p>
                 <ul>
@@ -85,8 +100,7 @@
                 <h3>Contact Me</h3>
             </header>
             <article>
-                <form>
-                    <!-- Form will have inputs for contact info, etc. -->
+                <form> <!-- Form will have inputs for contact info, etc. -->
                     <fieldset>
                         <input type="text" placeholder="Name" id="customer-name" requred>
                         <input type="text" placeholder="Email address" id="customer-email" requred>
@@ -118,21 +132,24 @@
     <footer>
         <a class="socialLink" href="https://github.com/jchurchman">
             <span data-icon="eab0" class="icon-github"></span>
-                    </a>
+        </a>
         <p>Copyright 2017 Joe Churchman</p>
-                <a class="socialLink" href="https://www.linkedin.com/in/joe-churchman-2007661a/">
+        <a class="socialLink" href="https://www.linkedin.com/in/joe-churchman-2007661a/">
             <span data-icon="eac9" class="icon-linkedin"></span>
-                    </a>
+        </a>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script type="text/javascript" src="./scripts/models/project.js"></script>
     <script type="text/javascript" src="./scripts/models/about.js"></script>
+    <script type="text/javascript" src="./scripts/models/repos.js"></script>
+    <script type="text/javascript" src="./scripts/models/githubtoken.js"></script>
 
     <script type="text/javascript" src="./scripts/viewers/aboutViewer.js"></script>
     <script type="text/javascript" src="./scripts/viewers/contactViewer.js"></script>
     <script type="text/javascript" src="./scripts/viewers/projectViewer.js"></script>
+    <script type="text/javascript" src="./scripts/viewers/repoViewer.js"></script>
 
     <script type="text/javascript" src="./scripts/controllers/aboutController.js"></script>
 
@@ -142,8 +159,6 @@
     <script type="text/javascript" src="./scripts/controllers/homeController.js"></script>
 
     <script type="text/javascript" src="./scripts/controllers/routes.js"></script>
-    <!--<script> app.Project.checkETag() </script>
-    <script> app.About.checkETag() </script>-->
 </body>
 
 </html>

@@ -11,7 +11,7 @@
     },
     "globals": {
         // e.g. "angular": true
-        "Handlebars": true,
+        "Handlebars": true
     },
     "rules": {
         ////////// Possible Errors //////////
