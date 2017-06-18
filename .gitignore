@@ -41,5 +41,5 @@ Thumbs.db
 node_modules/
 
 
-
+*.env
 *githubtoken.js
