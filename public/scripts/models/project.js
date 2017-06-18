@@ -1,5 +1,5 @@
 'use strict';
-var app = app || {}; 
+var app = app || {};  //eslint-disable-line 
 
 (function (module) {
 
@@ -15,7 +15,7 @@ var app = app || {};
     };
 
     Project.loadAll = (rawData) => {
-        app.Project.all = rawData.map( (ele) => new Project(ele));
+        app.Project.all = rawData.map((ele) => new Project(ele));
     };
 
     Project.runWhenDone = (data) => {
@@ -24,7 +24,7 @@ var app = app || {};
         app.projectView.initIndexPage();
     };
 
-    Project.runWhenErr = ( err ) => console.error( 'error', err );
+    Project.runWhenErr = (err) => console.error('error', err);
 
     Project.getDBData = () => {
         $.ajax({
@@ -51,7 +51,7 @@ var app = app || {};
             app.projectView.initIndexPage();
         } else {
             localStorage.setItem('lsProjectTag',
-            JSON.stringify(eTag));
+                JSON.stringify(eTag));
             app.Project.getDBData();
         }
     };

@@ -1,5 +1,5 @@
 'use strict';
-var app = app || {};
+var app = app || {}; //eslint-disable-line 
 
 (function (module) {
     const repoView = {};
@@ -12,13 +12,10 @@ var app = app || {};
     };
 
     repoView.index = function () {
-        ui();
         var render = Handlebars.compile($('#repo-template').text());
-        // console.log('render is ', render);
-        // console.log('app.repos.all is ', app.repos.all);
-        // console.log('app.repos.with("name") is ', app.repos.with('name'));
+        ui();
         $('#about ul').append(app.repos.with('name').map(render));
     };
 
     module.repoView = repoView;
-})(app);
+}(app));

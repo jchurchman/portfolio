@@ -1,5 +1,5 @@
 'use strict';
-var app = app || {};
+var app = app || {}; //eslint-disable-line 
 
 (function (module) {
     const repos = {};
@@ -19,4 +19,4 @@ var app = app || {};
     repos.with = attr => repos.all.filter(repo => repo[attr]);
 
     module.repos = repos;
-})(app);
+}(app));
