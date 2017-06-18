@@ -4,7 +4,7 @@ const express = require('express');
 const pg = require('pg');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const dotenv = require('dontenv').config();
+const dotenv = require('dotenv').config();
 const requestProxy = require('express-request-proxy');
 const conString = process.env.DATABASE_URL;
 
@@ -22,7 +22,7 @@ app.use(express.static('./public'));
 app.get('./data/abouts.json', (req, res) => res.sendFile('abouts.json', { root: './public' }));
 
 function proxyGitHub( request, response ) {
-    console.log( 'Routing GitHub request for', requestAnimationFrame.params[0] );
+    console.log( 'Routing GitHub request for', request.params[0] );
     ( requestProxy({
         url: `https://api.github.com/${request.params[0]}`,
         headers: {Authorization: `token ${process.env.GITHUB_TOKEN}`}
