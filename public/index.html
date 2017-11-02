@@ -1,164 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/base.css">
-    <link rel="stylesheet" type="text/css" href="./styles/layout.css">
-    <link rel="stylesheet" type="text/css" href="./styles/module.css">
-    <link rel="stylesheet" type="text/css" href="./styles/state.css">
-    <title>Joe Churchman</title>
-    <script id="project-template" type="text/x-handlebars-template">
-        <div>
-            <article>
-                <header>
-                    <h3>{{title}}</h3>
-                </header>
-                <figure>
-                    <img class="thumbnail" src="{{thumbnail}}"/>
-                    <figcaption>{{pitch}}</figcaption>
-                </figure>
-                <p class="date">Project completed around {{date}}</p>
-                <section class="blurb-body">{{{blurb}}}</section>
-                <a href="#" class="read-more">Read more &rarr;</a>
-                <nav>
-                    <a class="projectlink" href="{{link}}">link to hosted project</a>
-                    Links to github & social media will go here
-                </nav>
-            </article>
-        </div>
-    </script>
-    <script id="about-template" type="text/x-handlebars-template">
-        <div>
-            <article>
-                <h4>{{heading}}</h4>
-                <p>{{{info}}}</p>
-            </article>
-        </div>
-    </script>
-    <script id="repo-template" type="text/x-handlebars-template">
-        <li>
-            <a href="{{html_url}}" target="_blank">
-                <h3>{{name}}</h3>
-            </a>
-            {{#if description}}
-                <p>Description: {{description}}</p>
-            {{/if}}
-            <p>Language: {{language}}</p>
-            <p>Created: {{created_at}}</p>
-            <p>Last updated: {{updated_at}}</p>
-            {{#if watchers_count}}
-                <p>{{wathers_count}} watching this repo</p>
-            {{/if}}
-        </li>
-    </script>
-</head>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-<body>
-    <section id="site-heading">
-        <header>
-            <h1>Joe Churchman</h1>
-            <span data-icon="e9bd" class="icon-menu"></span>
-        </header>
-        <nav>
-            <div name="home" class="icon-home3"><a href="/"> Home</a></div> <!-- home tab will reset the menu -->
-            <div name="about"><a href="/about" class="icon-profile"> About</a></div>
-            <div name="portfolio"><a href="/project" class="icon-briefcase">Portfolio</a></div>
-            <div name="contact"><a href="/contact" class="icon-mail4">Contact</a></div> <!-- might end up putting contact on every page -->
-        </nav>
-    </section>
-    <main>
-        <section id="home">
-            <header>
-                <h2>Ever evolving developer</h2>
-                <h3>This is the home page</h3>
-            </header>
-            <article>
-                <p>Welcome to the site message</p>
-            </article>
-        </section>
-        <section id="portfolio">
-            
-        </section>
-        <section id="about">
-            <header>
-                <h3>About Joe</h3>
-            </header>
-            <aside>
-                <p>Interests</p>
-                <ul>
-                    <li>Interest1</li>
-                    <li>Interest2</li>
-                    <li>Interest3</li>
-                </ul>
-            </aside>
-        </section>
-        <section id="contact">
-            <header>
-                <h3>Contact Me</h3>
-            </header>
-            <article>
-                <form> <!-- Form will have inputs for contact info, etc. -->
-                    <fieldset>
-                        <input type="text" placeholder="Name" id="customer-name" requred>
-                        <input type="text" placeholder="Email address" id="customer-email" requred>
-                        <input type="text" placeholder="Company / Organization" id="customer-org">
-                        <label for="select" class="control-label">You need a...</label>
-                        <select name="requirement">
-                            <option>Website updated</option>
-                            <option>Website designed & developed</option>
-                            <option>Website developed</option>
-                            <option>Website designed</option>
-                            <option>Mobile / tablet app</option>
-                            <option>Ecommerce site</option>
-                            <option>Data visualization</option>
-                            <option>Other</option>
-                        </select>
-                        <label for="input" class="control-label">Budget:</label>
-                        <span id="budgetvalue">${{budgetval}}</span>
-                        <input type="range" step="400" min="1200" max="48000" name="budget" id="budgetslider" value="8000">
-                        <label for="input" class="control-label">Deadline:</label>
-                        <span id="deadlinevalue">{{deadlineval}}</span>
-                        <input type="range" step="1" min="0" max="13" name="deadline" id="deadlineslider" value="0">
-                        <textarea placeholder="Project Details..." id="project-details" rows="4" required></textarea>
-                        <button type="submit" class="button"><span>Send</span></button>
-                    </fieldset>
-                </form>
-                Specific contact/link info will be here
-            </article>
-    </main>
-    <footer>
-        <a class="socialLink" href="https://github.com/jchurchman">
-            <span data-icon="eab0" class="icon-github"></span>
-        </a>
-        <p>Copyright 2017 Joe Churchman</p>
-        <a class="socialLink" href="https://www.linkedin.com/in/joe-churchman-2007661a/">
-            <span data-icon="eac9" class="icon-linkedin"></span>
-        </a>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script type="text/javascript" src="./scripts/models/project.js"></script>
-    <script type="text/javascript" src="./scripts/models/about.js"></script>
-    <script type="text/javascript" src="./scripts/models/repos.js"></script>
-    <script type="text/javascript" src="./scripts/models/githubtoken.js"></script>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-    <script type="text/javascript" src="./scripts/viewers/aboutViewer.js"></script>
-    <script type="text/javascript" src="./scripts/viewers/contactViewer.js"></script>
-    <script type="text/javascript" src="./scripts/viewers/projectViewer.js"></script>
-    <script type="text/javascript" src="./scripts/viewers/repoViewer.js"></script>
-
-    <script type="text/javascript" src="./scripts/controllers/aboutController.js"></script>
-
-    <script type="text/javascript" src="./scripts/controllers/contactController.js"></script>
-
-    <script type="text/javascript" src="./scripts/controllers/projectController.js"></script>
-    <script type="text/javascript" src="./scripts/controllers/homeController.js"></script>
-
-    <script type="text/javascript" src="./scripts/controllers/routes.js"></script>
-</body>
-
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>
