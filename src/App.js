@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
-import './App.css';
+import Navigate from './Navigate/Navigate';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route
+} from 'react-router-dom';
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+          <header className="App-header">
+            <h1 className="App-title">Joe Churchman</h1>
+            <Navigate />
+          </header>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
+          </Switch>
+          <footer className="App-footer">
+          </footer>
+      </Router>
     );
   }
 }
