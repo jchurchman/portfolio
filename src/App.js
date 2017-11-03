@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigate from './Navigate/Navigate';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -7,6 +6,8 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './Home/Home';
+import Footer from './Main/Footer';
+import Header from './Main/Header';
 
 class App extends Component {
 
@@ -14,18 +15,13 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <header className="App-header">
-            <h1 className="App-title">Joe Churchman</h1>
-            <Navigate />
-          </header>
+          <Header/>
           <Switch>
             <Route exact path="/" component={Home} />
             {/* <Route path="/about" component={About} />
             <Route path="/projects" component={Projects} /> */}
           </Switch>
-          <footer className="App-footer">
-
-          </footer>
+          <Footer/>
         </div>
       </Router>
     );
